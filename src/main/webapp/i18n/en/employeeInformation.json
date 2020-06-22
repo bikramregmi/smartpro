@@ -1,0 +1,36 @@
+{
+  "smartproApp": {
+    "employeeInformation": {
+      "home": {
+        "title": "Employee Informations",
+        "createLabel": "Create a new Employee Information",
+        "createOrEditLabel": "Create or edit a Employee Information",
+        "notFound": "No Employee Informations found"
+      },
+      "created": "A new Employee Information is created with identifier {{ param }}",
+      "updated": "A Employee Information is updated with identifier {{ param }}",
+      "deleted": "A Employee Information is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Employee Information {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee Information"
+      },
+      "dob": "Dob",
+      "gender": "Gender",
+      "isMarried": "Is Married",
+      "bloodGroup": "Blood Group",
+      "parentName": "Parent Name",
+      "addressline1": "Addressline 1",
+      "addressline2": "Addressline 2",
+      "phoneNumber": "Phone Number",
+      "mobileNumber": "Mobile Number",
+      "emergencyContactNumber": "Emergency Contact Number",
+      "joiningDate": "Joining Date",
+      "designation": "Designation",
+      "panNumber": "Pan Number",
+      "documentNumber": "Document Number",
+      "extraField": "Extra Field"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "basicSalary",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "allowance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ot",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bonus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extra",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200620054329",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "employee_salary",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

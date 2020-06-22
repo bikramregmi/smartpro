@@ -1,0 +1,76 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "dob",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isMarried",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "bloodGroup",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "parentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressline1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressline2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobileNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emergencyContactNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "joiningDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "panNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200620053945",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "employee_information",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

@@ -25,6 +25,24 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const EmployeeInformation = () => import('../entities/employee-information/employee-information.vue');
+// prettier-ignore
+const EmployeeInformationUpdate = () => import('../entities/employee-information/employee-information-update.vue');
+// prettier-ignore
+const EmployeeInformationDetails = () => import('../entities/employee-information/employee-information-details.vue');
+// prettier-ignore
+const EmployeeSalary = () => import('../entities/employee-salary/employee-salary.vue');
+// prettier-ignore
+const EmployeeSalaryUpdate = () => import('../entities/employee-salary/employee-salary-update.vue');
+// prettier-ignore
+const EmployeeSalaryDetails = () => import('../entities/employee-salary/employee-salary-details.vue');
+// prettier-ignore
+const Employee = () => import('../entities/employee/employee.vue');
+// prettier-ignore
+const EmployeeUpdate = () => import('../entities/employee/employee-update.vue');
+// prettier-ignore
+const EmployeeDetails = () => import('../entities/employee/employee-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -141,6 +159,81 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: [Authority.ADMIN] }
+    }
+    ,
+    {
+      path: '/employee-information',
+      name: 'EmployeeInformation',
+      component: EmployeeInformation,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-information/new',
+      name: 'EmployeeInformationCreate',
+      component: EmployeeInformationUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-information/:employeeInformationId/edit',
+      name: 'EmployeeInformationEdit',
+      component: EmployeeInformationUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-information/:employeeInformationId/view',
+      name: 'EmployeeInformationView',
+      component: EmployeeInformationDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/employee-salary',
+      name: 'EmployeeSalary',
+      component: EmployeeSalary,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-salary/new',
+      name: 'EmployeeSalaryCreate',
+      component: EmployeeSalaryUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-salary/:employeeSalaryId/edit',
+      name: 'EmployeeSalaryEdit',
+      component: EmployeeSalaryUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee-salary/:employeeSalaryId/view',
+      name: 'EmployeeSalaryView',
+      component: EmployeeSalaryDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/employee',
+      name: 'Employee',
+      component: Employee,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee/new',
+      name: 'EmployeeCreate',
+      component: EmployeeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee/:employeeId/edit',
+      name: 'EmployeeEdit',
+      component: EmployeeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/employee/:employeeId/view',
+      name: 'EmployeeView',
+      component: EmployeeDetails,
+      meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]

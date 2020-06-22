@@ -29,6 +29,9 @@ import ConfigurationService from '@/admin/configuration/configuration.service';
 
 /* tslint:disable */
 
+import EmployeeInformationService from '@/entities/employee-information/employee-information.service';
+import EmployeeSalaryService from '@/entities/employee-salary/employee-salary.service';
+import EmployeeService from '@/entities/employee/employee.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -91,6 +94,9 @@ new Vue({
     metricsService: () => new MetricsService(),
     alertService: () => alertService,
     translationService: () => translationService,
+    employeeInformationService: () => new EmployeeInformationService(),
+    employeeSalaryService: () => new EmployeeSalaryService(),
+    employeeService: () => new EmployeeService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },
