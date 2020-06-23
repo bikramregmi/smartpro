@@ -2,7 +2,7 @@
     <div>
         <div class="row justify-content-center">
             <div class="col-md-8 toastify-container">
-                <h1 v-text="$t('register.title')" id="register-title">Registration</h1>
+                <h1 id="register-title">Registration</h1>
 
                 <div class="alert alert-success" role="alert" v-if="success" v-html="$t('register.messages.success')">
                     <strong>Registration saved!</strong> Please check your email for confirmation.
@@ -25,10 +25,10 @@
             <div class="col-md-8">
                 <form id="register-form" name="registerForm" role="form" v-on:submit.prevent="register()" v-if="!success" no-validate>
                     <div class="form-group">
-                        <label class="form-control-label" for="username" v-text="$t('global.form[\'username.label\']')">Username</label>
+                        <label class="form-control-label" for="username">Usernamee</label>{{$v.registerAccount.login.$model}}
                         <input type="text" class="form-control" v-model="$v.registerAccount.login.$model" id="username" name="login"
                                :class="{'valid': !$v.registerAccount.login.$invalid, 'invalid': $v.registerAccount.login.$invalid }"
-                               required minlength="1" maxlength="50" pattern="^[a-zA-Z0-9!#$&'*+=?^_`{|}~.-]+@?[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" v-bind:placeholder="$t('global.form[\'username.placeholder\']')">
+                               required minlength="1" maxlength="50" pattern="^[a-zA-Z0-9!#$&'*+=?^_`{|}~.-]+@?[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                         <div v-if="$v.registerAccount.login.$anyDirty && $v.registerAccount.login.$invalid">
                             <small class="form-text text-danger" v-if="!$v.registerAccount.login.required"
                                    v-text="$t('register.messages.validate.login.required')">

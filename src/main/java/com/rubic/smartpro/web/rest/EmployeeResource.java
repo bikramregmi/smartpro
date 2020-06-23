@@ -1,5 +1,7 @@
 package com.rubic.smartpro.web.rest;
 
+import com.rubic.smartpro.enumConstants.ResponseStatus;
+import com.rubic.smartpro.responseClass.RestResponseDto;
 import com.rubic.smartpro.service.EmployeeService;
 import com.rubic.smartpro.web.rest.errors.BadRequestAlertException;
 import com.rubic.smartpro.service.dto.EmployeeDTO;
@@ -57,15 +59,22 @@ public class EmployeeResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/employees")
-    public ResponseEntity<EmployeeDTO> createEmployee(@Valid @RequestBody EmployeeDTO employeeDTO) throws URISyntaxException {
+    public RestResponseDto createEmployee(@Valid @RequestBody EmployeeDTO employeeDTO) throws URISyntaxException {
+        RestResponseDto restResponseDto=new RestResponseDto();
         log.debug("REST request to save Employee : {}", employeeDTO);
         if (employeeDTO.getId() != null) {
             throw new BadRequestAlertException("A new employee cannot already have an ID", ENTITY_NAME, "idexists");
         }
         EmployeeDTO result = employeeService.save(employeeDTO);
-        return ResponseEntity.created(new URI("/api/employees/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
-            .body(result);
+        if(result!=null) {
+            restResponseDto.setDetail(result);
+            restResponseDto.setResponseStatus(ResponseStatus.SUCCESS);
+            restResponseDto.setMessage("New Employee Saved SuccessFully");
+        } else {
+            restResponseDto.setResponseStatus(ResponseStatus.INTERNAL_SERVER_ERROR);
+            restResponseDto.setMessage("Error In Saving New Employee");
+        }
+        return restResponseDto;
     }
 
     /**
