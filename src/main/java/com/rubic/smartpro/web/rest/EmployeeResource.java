@@ -106,6 +106,7 @@ public class EmployeeResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of employees in body.
      */
     @GetMapping("/employees")
+    @CrossOrigin
     public ResponseEntity<List<EmployeeDTO>> getAllEmployees(EmployeeCriteria criteria, Pageable pageable) {
         log.debug("REST request to get Employees by criteria: {}", criteria);
         Page<EmployeeDTO> page = employeeQueryService.findByCriteria(criteria, pageable);

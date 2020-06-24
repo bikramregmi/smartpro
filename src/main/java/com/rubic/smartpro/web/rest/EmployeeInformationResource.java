@@ -54,7 +54,7 @@ public class EmployeeInformationResource {
     public ResponseEntity<EmployeeInformationDTO> createEmployeeInformation(@RequestBody EmployeeInformationDTO employeeInformationDTO) throws URISyntaxException {
         log.debug("REST request to save EmployeeInformation : {}", employeeInformationDTO);
        if(employeeInformationDTO.getId()!=null)
-           updateEmployeeInformation(employeeInformationDTO);
+           throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         EmployeeInformationDTO result = employeeInformationService.save(employeeInformationDTO);
         return ResponseEntity.created(new URI("/api/employee-informations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

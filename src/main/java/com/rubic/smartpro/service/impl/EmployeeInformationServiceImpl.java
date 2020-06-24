@@ -66,6 +66,7 @@ public class EmployeeInformationServiceImpl implements EmployeeInformationServic
            employeeInformation1.get().setDob(employeeInformationDTO.getDob());
            employeeInformation1.get().setAddressline1(employeeInformationDTO.getAddressline1());
            employeeInformation1.get().setAddressline2(employeeInformationDTO.getAddressline2());
+           employeeInformation1.get().setBloodGroup(employeeInformationDTO.getBloodGroup());
            return employeeInformationMapper.toDto(employeeInformationRepository.save(employeeInformation1.get()));
        }
         EmployeeInformation employeeInformation = employeeInformationMapper.toEntity(employeeInformationDTO);

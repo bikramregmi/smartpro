@@ -13,7 +13,7 @@ import EmployeeService from './employee.service';
 export default class Employee extends mixins(AlertMixin) {
   @Inject('employeeService') private employeeService: () => EmployeeService;
   private removeId: number = null;
-  public itemsPerPage = 20;
+  public itemsPerPage = 5;
   public queryCount: number = null;
   public page = 1;
   public previousPage = 1;

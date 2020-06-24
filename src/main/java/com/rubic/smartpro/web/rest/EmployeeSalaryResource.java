@@ -54,7 +54,7 @@ public class EmployeeSalaryResource {
     public ResponseEntity<EmployeeSalaryDTO> createEmployeeSalary(@RequestBody EmployeeSalaryDTO employeeSalaryDTO) throws URISyntaxException {
         log.debug("REST request to save EmployeeSalary : {}", employeeSalaryDTO);
         if (employeeSalaryDTO.getId() != null) {
-            updateEmployeeSalary(employeeSalaryDTO);
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
         EmployeeSalaryDTO result = employeeSalaryService.save(employeeSalaryDTO);
         return ResponseEntity.created(new URI("/api/employee-salaries/" + result.getId()))
