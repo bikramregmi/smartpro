@@ -10,6 +10,7 @@
         "employeeInformation": "Employee Information",
         "employeeSalary": "Employee Salary",
         "employee": "Employee",
+        "payrollGenerate": "Payroll Generate",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

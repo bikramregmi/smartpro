@@ -1,11 +1,17 @@
 package com.rubic.smartpro.service;
 
+import com.rubic.smartpro.domain.Employee;
 import com.rubic.smartpro.domain.User;
 
+import com.rubic.smartpro.service.dto.PayrollGenerateDTO;
 import io.github.jhipster.config.JHipsterProperties;
 
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
@@ -43,7 +49,7 @@ public class MailService {
     private final SpringTemplateEngine templateEngine;
 
     public MailService(JHipsterProperties jHipsterProperties, JavaMailSender javaMailSender,
-            MessageSource messageSource, SpringTemplateEngine templateEngine) {
+                       MessageSource messageSource, SpringTemplateEngine templateEngine) {
 
         this.jHipsterProperties = jHipsterProperties;
         this.javaMailSender = javaMailSender;
@@ -66,7 +72,7 @@ public class MailService {
             message.setText(content, isHtml);
             javaMailSender.send(mimeMessage);
             log.debug("Sent email to User '{}'", to);
-        }  catch (MailException | MessagingException e) {
+        } catch (MailException | MessagingException e) {
             log.warn("Email could not be sent to user '{}'", to, e);
         }
     }
@@ -90,6 +96,39 @@ public class MailService {
     public void sendActivationEmail(User user) {
         log.debug("Sending activation email to '{}'", user.getEmail());
         sendEmailFromTemplate(user, "mail/activationEmail", "email.activation.title");
+    }
+    @Async
+    public void sendEmailFromTemplateForPayroll(Employee employee,PayrollGenerateDTO payrollGenerateDTO, String templateName, String titleKey) {
+        if (employee.getEmail() == null) {
+            log.debug("Email doesn't exist for Employee '{}'", employee.getFullName());
+            return;
+        }
+        Locale locale = Locale.forLanguageTag("en");
+        SimpleDateFormat dateTimeInGMT = new SimpleDateFormat("yyyy-MMM-dd hh:mm:ss aa");
+        //Setting the time zone
+        dateTimeInGMT.setTimeZone(TimeZone.getTimeZone("GMT"));
+        Context context = new Context(locale);
+        context.setVariable("salaryMonth",payrollGenerateDTO.getSalaryMonth());
+        context.setVariable("employeeCode", employee.geteCode());
+        context.setVariable("employeeSalary", payrollGenerateDTO.getSalaryTotal());
+        context.setVariable("allowance", employee.getEmployeeSalary().getAllowance());
+        context.setVariable("basicSalary", employee.getEmployeeSalary().getBasicSalary());
+        context.setVariable("ot", employee.getEmployeeSalary().getOt());
+        context.setVariable("pf", employee.getEmployeeSalary().getPf());
+        context.setVariable("bonus", employee.getEmployeeSalary().getBonus());
+        context.setVariable("tax", employee.getEmployeeSalary().getTax());
+        context.setVariable("employeeName", employee.getFullName());
+        context.setVariable("issueDate",dateTimeInGMT.format(new Date()));
+        String content = templateEngine.process(templateName, context);
+        String subject = messageSource.getMessage(titleKey, null, locale);
+        sendEmail(employee.getEmail(), subject, content, false, true);
+    }
+    @Async
+    public void sendPayroll(List<Employee> employees, PayrollGenerateDTO payrollGenerateDTO) {
+        for (Employee employee : employees) {
+            log.debug("Sending activation email to '{}'", employee.getEmail());
+            sendEmailFromTemplateForPayroll(employee,payrollGenerateDTO, "mail/payrollFormat", "payroll.send.title");
+        }
     }
 
     @Async

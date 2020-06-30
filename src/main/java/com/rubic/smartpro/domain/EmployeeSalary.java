@@ -19,25 +19,25 @@ public class EmployeeSalary implements Serializable {
     private Long id;
 
     @Column(name = "basic_salary")
-    private String basicSalary;
+    private long basicSalary;
 
     @Column(name = "allowance")
-    private String allowance;
+    private long allowance;
 
     @Column(name = "ot")
-    private String ot;
+    private long ot;
 
     @Column(name = "bonus")
-    private String bonus;
+    private long bonus;
 
     @Column(name = "description")
-    private String description;
+    private long description;
 
     @Column(name = "tax")
-    private String tax;
+    private long tax;
 
     @Column(name = "pf")
-    private String pf;
+    private long pf;
 
     @Column(name = "extra")
     private String extra;
@@ -47,98 +47,63 @@ public class EmployeeSalary implements Serializable {
         return id;
     }
 
+    public long getBasicSalary() {
+        return basicSalary;
+    }
+
+    public void setBasicSalary(long basicSalary) {
+        this.basicSalary = basicSalary;
+    }
+
+    public long getAllowance() {
+        return allowance;
+    }
+
+    public void setAllowance(long allowance) {
+        this.allowance = allowance;
+    }
+
+    public long getOt() {
+        return ot;
+    }
+
+    public void setOt(long ot) {
+        this.ot = ot;
+    }
+
+    public long getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(long bonus) {
+        this.bonus = bonus;
+    }
+
+    public long getDescription() {
+        return description;
+    }
+
+    public void setDescription(long description) {
+        this.description = description;
+    }
+
+    public long getTax() {
+        return tax;
+    }
+
+    public void setTax(long tax) {
+        this.tax = tax;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getBasicSalary() {
-        return basicSalary;
-    }
-
-    public EmployeeSalary basicSalary(String basicSalary) {
-        this.basicSalary = basicSalary;
-        return this;
-    }
-
-    public void setBasicSalary(String basicSalary) {
-        this.basicSalary = basicSalary;
-    }
-
-    public String getAllowance() {
-        return allowance;
-    }
-
-    public EmployeeSalary allowance(String allowance) {
-        this.allowance = allowance;
-        return this;
-    }
-
-    public void setAllowance(String allowance) {
-        this.allowance = allowance;
-    }
-
-    public String getOt() {
-        return ot;
-    }
-
-    public EmployeeSalary ot(String ot) {
-        this.ot = ot;
-        return this;
-    }
-
-    public void setOt(String ot) {
-        this.ot = ot;
-    }
-
-    public String getBonus() {
-        return bonus;
-    }
-
-    public EmployeeSalary bonus(String bonus) {
-        this.bonus = bonus;
-        return this;
-    }
-
-    public void setBonus(String bonus) {
-        this.bonus = bonus;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public EmployeeSalary description(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTax() {
-        return tax;
-    }
-
-    public EmployeeSalary tax(String tax) {
-        this.tax = tax;
-        return this;
-    }
-
-    public void setTax(String tax) {
-        this.tax = tax;
-    }
-
-    public String getPf() {
+    public long getPf() {
         return pf;
     }
 
-    public EmployeeSalary pf(String pf) {
-        this.pf = pf;
-        return this;
-    }
-
-    public void setPf(String pf) {
+    public void setPf(long pf) {
         this.pf = pf;
     }
 
@@ -173,18 +138,19 @@ public class EmployeeSalary implements Serializable {
     }
 
     // prettier-ignore
+
     @Override
     public String toString() {
         return "EmployeeSalary{" +
-            "id=" + getId() +
-            ", basicSalary='" + getBasicSalary() + "'" +
-            ", allowance='" + getAllowance() + "'" +
-            ", ot='" + getOt() + "'" +
-            ", bonus='" + getBonus() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", tax='" + getTax() + "'" +
-            ", pf='" + getPf() + "'" +
-            ", extra='" + getExtra() + "'" +
-            "}";
+            "id=" + id +
+            ", basicSalary=" + basicSalary +
+            ", allowance=" + allowance +
+            ", ot=" + ot +
+            ", bonus=" + bonus +
+            ", description=" + description +
+            ", tax=" + tax +
+            ", pf=" + pf +
+            ", extra='" + extra + '\'' +
+            '}';
     }
 }

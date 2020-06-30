@@ -43,6 +43,12 @@ const Employee = () => import('../entities/employee/employee.vue');
 const EmployeeUpdate = () => import('../entities/employee/employee-update.vue');
 // prettier-ignore
 const EmployeeDetails = () => import('../entities/employee/employee-details.vue');
+// prettier-ignore
+const PayrollGenerate = () => import('../entities/payroll-generate/payroll-generate.vue');
+// prettier-ignore
+const PayrollGenerateUpdate = () => import('../entities/payroll-generate/payroll-generate-update.vue');
+// prettier-ignore
+const PayrollGenerateDetails = () => import('../entities/payroll-generate/payroll-generate-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -233,6 +239,31 @@ export default new Router({
       path: '/employee/:employeeId/view',
       name: 'EmployeeView',
       component: EmployeeDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/payroll-generate',
+      name: 'PayrollGenerate',
+      component: PayrollGenerate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/payroll-generate/new',
+      name: 'PayrollGenerateCreate',
+      component: PayrollGenerateUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/payroll-generate/:payrollGenerateId/edit',
+      name: 'PayrollGenerateEdit',
+      component: PayrollGenerateUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/payroll-generate/:payrollGenerateId/view',
+      name: 'PayrollGenerateView',
+      component: PayrollGenerateDetails,
       meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

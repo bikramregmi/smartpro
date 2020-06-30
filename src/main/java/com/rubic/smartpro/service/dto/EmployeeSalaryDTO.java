@@ -9,19 +9,19 @@ public class EmployeeSalaryDTO implements Serializable {
 
     private Long id;
 
-    private String basicSalary;
+    private long basicSalary;
 
-    private String allowance;
+    private long allowance;
 
-    private String ot;
+    private long ot;
 
-    private String bonus;
+    private long bonus;
 
-    private String description;
+    private long description;
 
-    private String tax;
+    private long tax;
 
-    private String pf;
+    private long pf;
 
     private String extra;
 
@@ -36,59 +36,59 @@ public class EmployeeSalaryDTO implements Serializable {
         this.id = id;
     }
 
-    public String getBasicSalary() {
+    public long getBasicSalary() {
         return basicSalary;
     }
 
-    public void setBasicSalary(String basicSalary) {
+    public void setBasicSalary(long basicSalary) {
         this.basicSalary = basicSalary;
     }
 
-    public String getAllowance() {
+    public long getAllowance() {
         return allowance;
     }
 
-    public void setAllowance(String allowance) {
+    public void setAllowance(long allowance) {
         this.allowance = allowance;
     }
 
-    public String getOt() {
+    public long getOt() {
         return ot;
     }
 
-    public void setOt(String ot) {
+    public void setOt(long ot) {
         this.ot = ot;
     }
 
-    public String getBonus() {
+    public long getBonus() {
         return bonus;
     }
 
-    public void setBonus(String bonus) {
+    public void setBonus(long bonus) {
         this.bonus = bonus;
     }
 
-    public String getDescription() {
+    public long getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(long description) {
         this.description = description;
     }
 
-    public String getTax() {
+    public long getTax() {
         return tax;
     }
 
-    public void setTax(String tax) {
+    public void setTax(long tax) {
         this.tax = tax;
     }
 
-    public String getPf() {
+    public long getPf() {
         return pf;
     }
 
-    public void setPf(String pf) {
+    public void setPf(long pf) {
         this.pf = pf;
     }
 

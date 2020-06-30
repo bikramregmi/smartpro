@@ -1,0 +1,27 @@
+{
+  "smartproApp": {
+    "payrollGenerate": {
+      "home": {
+        "title": "Payroll Generates",
+        "createLabel": "Create a new Payroll Generate",
+        "createOrEditLabel": "Create or edit a Payroll Generate",
+        "notFound": "No Payroll Generates found"
+      },
+      "created": "A new Payroll Generate is created with identifier {{ param }}",
+      "updated": "A Payroll Generate is updated with identifier {{ param }}",
+      "deleted": "A Payroll Generate is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Payroll Generate {{ id }}?"
+      },
+      "detail": {
+        "title": "Payroll Generate"
+      },
+      "salaryMonth": "Salary Month",
+      "description": "Description",
+      "tax": "Tax",
+      "pf": "Pf",
+      "employee": "Employee",
+      "employeeSalary": "Employee Salary"
+    }
+  }
+}

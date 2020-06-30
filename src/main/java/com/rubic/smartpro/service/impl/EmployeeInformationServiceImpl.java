@@ -101,10 +101,11 @@ public class EmployeeInformationServiceImpl implements EmployeeInformationServic
      * @return the entity.
      */
     @Override
+
     @Transactional(readOnly = true)
     public Optional<EmployeeInformationDTO> findOne(Long id) {
         log.debug("Request to get EmployeeInformation : {}", id);
-        return employeeInformationRepository.findById(id)
+        return employeeInformationRepository.findById(employeeRepository.getOne(id).getEmployeeInformation().getId())
             .map(employeeInformationMapper::toDto);
     }
 

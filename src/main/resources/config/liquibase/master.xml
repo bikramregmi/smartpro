@@ -17,8 +17,10 @@
     <include file="config/liquibase/changelog/20200620053945_added_entity_EmployeeInformation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200620054329_added_entity_EmployeeSalary.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200620054903_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200625052121_added_entity_PayrollGenerate.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200620054903_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200625052121_added_entity_constraints_PayrollGenerate.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>
