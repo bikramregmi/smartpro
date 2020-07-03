@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ribbon></ribbon>
+<!--    <ribbon></ribbon>-->
     <div id="app-header">
       <jhi-navbar></jhi-navbar>
     </div>
@@ -20,3 +20,4 @@
 
 <script lang="ts" src="./app.component.ts">
 </script>
+<script type="text/css"
