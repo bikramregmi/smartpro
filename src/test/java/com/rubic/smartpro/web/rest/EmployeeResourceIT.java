@@ -1,3 +1,4 @@
+/*
 package com.rubic.smartpro.web.rest;
 
 import com.rubic.smartpro.SmartproApp;
@@ -28,9 +29,11 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+*/
 /**
  * Integration tests for the {@link EmployeeResource} REST controller.
- */
+ *//*
+
 @SpringBootTest(classes = SmartproApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
@@ -68,12 +71,14 @@ public class EmployeeResourceIT {
 
     private Employee employee;
 
-    /**
+    */
+/**
      * Create an entity for this test.
      *
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
-     */
+     *//*
+
     public static Employee createEntity(EntityManager em) {
         Employee employee = new Employee()
             .fullName(DEFAULT_FULL_NAME)
@@ -82,12 +87,14 @@ public class EmployeeResourceIT {
             .isActive(DEFAULT_IS_ACTIVE);
         return employee;
     }
-    /**
+    */
+/**
      * Create an updated entity for this test.
      *
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
-     */
+     *//*
+
     public static Employee createUpdatedEntity(EntityManager em) {
         Employee employee = new Employee()
             .fullName(UPDATED_FULL_NAME)
@@ -220,7 +227,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].eCode").value(hasItem(DEFAULT_E_CODE)))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getEmployee() throws Exception {
@@ -583,9 +590,11 @@ public class EmployeeResourceIT {
         defaultEmployeeShouldNotBeFound("employeeInformationId.equals=" + (employeeInformationId + 1));
     }
 
-    /**
+    */
+/**
      * Executes the search, and checks that the default entity is returned.
-     */
+     *//*
+
     private void defaultEmployeeShouldBeFound(String filter) throws Exception {
         restEmployeeMockMvc.perform(get("/api/employees?sort=id,desc&" + filter))
             .andExpect(status().isOk())
@@ -603,9 +612,11 @@ public class EmployeeResourceIT {
             .andExpect(content().string("1"));
     }
 
-    /**
+    */
+/**
      * Executes the search, and checks that the default entity is not returned.
-     */
+     *//*
+
     private void defaultEmployeeShouldNotBeFound(String filter) throws Exception {
         restEmployeeMockMvc.perform(get("/api/employees?sort=id,desc&" + filter))
             .andExpect(status().isOk())
@@ -699,3 +710,4 @@ public class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeDelete - 1);
     }
 }
+*/

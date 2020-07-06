@@ -33,6 +33,7 @@ import EmployeeInformationService from '@/entities/employee-information/employee
 import EmployeeSalaryService from '@/entities/employee-salary/employee-salary.service';
 import EmployeeService from '@/entities/employee/employee.service';
 import PayrollGenerateService from '@/entities/payroll-generate/payroll-generate.service';
+import AttendanceService from '@/entities/attendance/attendance.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -99,6 +100,7 @@ new Vue({
     employeeSalaryService: () => new EmployeeSalaryService(),
     employeeService: () => new EmployeeService(),
     payrollGenerateService: () => new PayrollGenerateService(),
+    attendanceService: () => new AttendanceService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

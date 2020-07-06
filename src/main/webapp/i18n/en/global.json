@@ -11,6 +11,7 @@
         "employeeSalary": "Employee Salary",
         "employee": "Employee",
         "payrollGenerate": "Payroll Generate",
+        "attendance": "Attendance",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
