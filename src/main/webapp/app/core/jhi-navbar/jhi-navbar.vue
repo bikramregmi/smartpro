@@ -1,8 +1,8 @@
 <template>
     <b-navbar toggleable="md" type="dark" class="bg-dark">
         <b-navbar-brand class="logo" b-link to="/">
-            <span class="logo-img"></span>
-            <span v-text="$t('global.title')" class="navbar-title">smartpro</span>
+<!--            <span class="logo-img"></span>-->
+            <span v-text="$t('global.title')" class="navbar-title">Payroll</span>
         </b-navbar-brand>
         <b-navbar-toggle
         right

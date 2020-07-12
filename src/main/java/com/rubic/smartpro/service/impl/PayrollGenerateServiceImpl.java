@@ -67,7 +67,7 @@ public class PayrollGenerateServiceImpl implements PayrollGenerateService {
             payrollGenerateDTO.setEmployee(Collections.singleton(employee1));
             payrollGenerateDTO.setEmployeeName(employee1.getFullName());
             payrollGenerateDTO.setDescription("Salary Statement");
-            long totalSalary =employeeSalary.getBasicSalary() + employeeSalary.getAllowance() + employeeSalary.getBonus() + employeeSalary.getOt() - employeeSalary.getPf();
+            long totalSalary =employeeSalary.getBasicSalary() + employeeSalary.getAllowance() + employeeSalary.getBonus() + employeeSalary.getOt();
             payrollGenerateDTO.setSalaryTotal(String.valueOf(totalSalary));
             payrollGenerate = payrollGenerateMapper.toEntity(payrollGenerateDTO);
             payrollGenerate = payrollGenerateRepository.save(payrollGenerate);
@@ -78,7 +78,6 @@ public class PayrollGenerateServiceImpl implements PayrollGenerateService {
         } catch (Exception e) {
             log.debug(e.getMessage());
         }
-
 
         return payrollGenerateMapper.toDto(payrollGenerate);
     }

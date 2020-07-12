@@ -56,16 +56,17 @@ public class AttendanceServiceImpl implements AttendanceService {
         log.debug("Request to save Attendance : {}", attendanceDTO);
         Attendance attendance;
         Employee employee= employeeRepository.findByeCode(attendanceDTO.getEmployeeCode());
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        LocalDate strDate = LocalDate.parse(formatter.format(date));
         if(employee!=null) {
             attendanceDTO.setEmployeeId(employee.getId());
             if(attendanceDTO.getCheckOutDate()!=null) {
                 attendance= attendanceRepository.getOne(attendanceDTO.getId());
                 attendance.setCheckOut(Instant.parse(attendanceDTO.getCheckOutDate()));
+                attendance.setInsertedDate(strDate);
             } else {
                 attendanceDTO.setCheckIn(Instant.parse(attendanceDTO.getCheckInDate()));
-                Date date = new Date();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                LocalDate strDate = LocalDate.parse(formatter.format(date));
                 attendanceDTO.setInsertedDate(strDate);
                 attendance = attendanceMapper.toEntity(attendanceDTO);
             }

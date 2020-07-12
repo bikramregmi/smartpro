@@ -20,4 +20,3 @@
 
 <script lang="ts" src="./app.component.ts">
 </script>
-<script type="text/css"

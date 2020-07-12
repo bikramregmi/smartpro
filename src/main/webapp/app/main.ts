@@ -9,6 +9,7 @@ import * as config from './shared/config/config';
 import * as bootstrapVueConfig from './shared/config/config-bootstrap-vue';
 import JhiItemCountComponent from './shared/jhi-item-count.vue';
 import JhiSortIndicatorComponent from './shared/sort/jhi-sort-indicator.vue';
+import '../content/css/main.css';
 import InfiniteLoading from 'vue-infinite-loading';
 import AuditsService from './admin/audits/audits.service';
 
