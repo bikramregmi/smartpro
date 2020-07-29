@@ -25,25 +25,6 @@
                     <dt>
                         <span v-text="$t('smartproApp.employee.isActive')">Is Active</span>
                     </dt>
-                    <dd>
-                        <span>{{employee.isActive}}</span>
-                    </dd>
-                    <dt>
-                        <span v-text="$t('smartproApp.employee.employeeSalary')">Employee Salary</span>
-                    </dt>
-                    <dd>
-                        <div v-if="employee.employeeSalaryId">
-                            <router-link :to="{name: 'EmployeeSalaryView', params: {employeeSalaryId: employee.employeeSalaryId}}">{{employee.employeeSalaryFullName}}</router-link>
-                        </div>
-                    </dd>
-                    <dt>
-                        <span v-text="$t('smartproApp.employee.employeeInformation')">Employee Information</span>
-                    </dt>
-                    <dd>
-                        <div v-if="employee.employeeInformationId">
-                            <router-link :to="{name: 'EmployeeInformationView', params: {employeeInformationId: employee.employeeInformationId}}">{{employee.employeeInformationId}}</router-link>
-                        </div>
-                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

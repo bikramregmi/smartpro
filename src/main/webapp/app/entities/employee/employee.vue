@@ -4,16 +4,16 @@
             <span v-text="$t('smartproApp.employee.home.title')" id="employee-heading">Employees</span>
             <router-link :to="{name: 'EmployeeCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-employee">
                 <font-awesome-icon icon="plus"></font-awesome-icon>
-                <span  v-text="$t('smartproApp.employee.home.createLabel')">
+                <span v-text="$t('smartproApp.employee.home.createLabel')">
                     Create a new Employee
                 </span>
             </router-link>
         </h2>
         <b-alert :show="dismissCountDown"
-            dismissible
-            :variant="alertType"
-            @dismissed="dismissCountDown=0"
-            @dismiss-count-down="countDownChanged">
+                 dismissible
+                 :variant="alertType"
+                 @dismissed="dismissCountDown=0"
+                 @dismiss-count-down="countDownChanged">
             {{alertMessage}}
         </b-alert>
         <br/>
@@ -24,13 +24,21 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th v-on:click="changeOrder('id')"><span v-text="$t('global.field.id')">ID</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'id'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('fullName')"><span v-text="$t('smartproApp.employee.fullName')">Full Name</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'fullName'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('email')"><span v-text="$t('smartproApp.employee.email')">Email</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'email'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('eCode')"><span v-text="$t('smartproApp.employee.eCode')">E Code</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'eCode'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('isActive')"><span v-text="$t('smartproApp.employee.isActive')">Is Active</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'isActive'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('employeeSalaryFullName')"><span v-text="$t('smartproApp.employee.employeeSalary')">Employee Salary</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'employeeSalaryFullName'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('employeeInformationId')"><span v-text="$t('smartproApp.employee.employeeInformation')">Employee Information</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'employeeInformationId'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('id')"><span v-text="$t('global.field.id')">ID</span>
+                        <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'id'"></jhi-sort-indicator>
+                    </th>
+                    <th v-on:click="changeOrder('fullName')"><span v-text="$t('smartproApp.employee.fullName')">Full Name</span>
+                        <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'fullName'"></jhi-sort-indicator>
+                    </th>
+                    <th v-on:click="changeOrder('email')"><span v-text="$t('smartproApp.employee.email')">Email</span>
+                        <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'email'"></jhi-sort-indicator>
+                    </th>
+                    <th v-on:click="changeOrder('eCode')"><span v-text="$t('smartproApp.employee.eCode')">E Code</span>
+                        <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'eCode'"></jhi-sort-indicator>
+                    </th>
+                    <!--  <th v-on:click="changeOrder('isActive')"><span v-text="$t('smartproApp.employee.isActive')">Is Active</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'isActive'"></jhi-sort-indicator></th>
+                      <th v-on:click="changeOrder('employeeSalaryFullName')"><span v-text="$t('smartproApp.employee.employeeSalary')">Employee Salary</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'employeeSalaryFullName'"></jhi-sort-indicator></th>
+                      <th v-on:click="changeOrder('employeeInformationId')"><span v-text="$t('smartproApp.employee.employeeInformation')">Employee Information</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'employeeInformationId'"></jhi-sort-indicator></th>-->
                     <th></th>
                 </tr>
                 </thead>
@@ -43,31 +51,31 @@
                     <td>{{employee.fullName}}</td>
                     <td>{{employee.email}}</td>
                     <td>{{employee.eCode}}</td>
-                    <td>{{employee.isActive}}</td>
-                    <td>
-                        <div v-if="employee.employeeSalaryId">
-                            <router-link :to="{name: 'EmployeeSalaryView', params: {employeeSalaryId: employee.employeeSalaryId}}">{{employee.employeeSalaryFullName}}</router-link>
-                        </div>
-                    </td>
-                    <td>
-                        <div v-if="employee.employeeInformationId">
-                            <router-link :to="{name: 'EmployeeInformationView', params: {employeeInformationId: employee.employeeInformationId}}">{{employee.employeeInformationId}}</router-link>
-                        </div>
-                    </td>
+                    <!-- <td>{{employee.isActive}}</td>
+                     <td>
+                         <div v-if="employee.employeeSalaryId">
+                             <router-link :to="{name: 'EmployeeSalaryView', params: {employeeSalaryId: employee.employeeSalaryId}}">{{employee.employeeSalaryFullName}}</router-link>
+                         </div>
+                     </td>
+                     <td>
+                         <div v-if="employee.employeeInformationId">
+                             <router-link :to="{name: 'EmployeeInformationView', params: {employeeInformationId: employee.employeeInformationId}}">{{employee.employeeInformationId}}</router-link>
+                         </div>
+                     </td>-->
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'EmployeeView', params: {employeeId: employee.id}}" tag="button" class="btn btn-info btn-sm details">
                                 <font-awesome-icon icon="eye"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.view')">View</span>
                             </router-link>
-                            <router-link :to="{name: 'EmployeeEdit', params: {employeeId: employee.id}}"  tag="button" class="btn btn-primary btn-sm edit">
+                            <router-link :to="{name: 'EmployeeEdit', params: {employeeId: employee.id}}" tag="button" class="btn btn-primary btn-sm edit">
                                 <font-awesome-icon icon="pencil-alt"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.edit')">Edit</span>
                             </router-link>
                             <b-button v-on:click="prepareRemove(employee)"
-                                   variant="danger"
-                                   class="btn btn-sm"
-                                   v-b-modal.removeEntity>
+                                      variant="danger"
+                                      class="btn btn-sm"
+                                      v-b-modal.removeEntity>
                                 <font-awesome-icon icon="times"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.delete')">Delete</span>
                             </b-button>
@@ -77,7 +85,7 @@
                 </tbody>
             </table>
         </div>
-        <b-modal ref="removeEntity" id="removeEntity" >
+        <b-modal ref="removeEntity" id="removeEntity">
             <span slot="modal-title"><span id="smartproApp.employee.delete.question" v-text="$t('entity.delete.title')">Confirm delete operation</span></span>
             <div class="modal-body">
                 <p id="jhi-delete-employee-heading" v-text="$t('smartproApp.employee.delete.question', {'id': removeId})">Are you sure you want to delete this Employee?</p>

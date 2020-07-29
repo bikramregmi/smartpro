@@ -55,6 +55,8 @@ const Attendance = () => import('../entities/attendance/attendance.vue');
 const AttendanceUpdate = () => import('../entities/attendance/attendance-update.vue');
 // prettier-ignore
 const AttendanceDetails = () => import('../entities/attendance/attendance-details.vue');
+
+const Dashboard = () => import('../core/Dashboard.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -295,6 +297,12 @@ export default new Router({
       path: '/attendance/:attendanceId/view',
       name: 'AttendanceView',
       component: AttendanceDetails,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard,
       meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -3,8 +3,8 @@
     "employee": {
       "home": {
         "title": "Employees",
-        "createLabel": "Create a new Employee",
-        "createOrEditLabel": "Create or edit a Employee",
+        "createLabel": "Add New Employee",
+        "createOrEditLabel": "Add or Edit New Employee",
         "notFound": "No Employees found"
       },
       "created": "A new Employee is created with identifier {{ param }}",

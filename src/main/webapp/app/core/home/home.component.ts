@@ -17,7 +17,6 @@ export default class Home extends Vue {
 
   public doLogin(): void {
     const data = { username: this.login, password: this.password, rememberMe: this.rememberMe };
-    alert(data.username + data.password);
     axios
       .post('api/authenticate', data)
       .then(result => {
@@ -31,6 +30,7 @@ export default class Home extends Vue {
           }
         }
         this.authenticationError = false;
+        this.$router.push('/dashboard');
         this.$root.$emit('bv::hide::modal', 'login-page');
         this.accountService().retrieveAccount();
       })
@@ -39,7 +39,7 @@ export default class Home extends Vue {
       });
   }
 
-  public openLogin(): void {
+ /* public openLogin(): void {
     this.loginService().openLogin((<any>this).$root);
   }
 
@@ -49,5 +49,5 @@ export default class Home extends Vue {
 
   public get username(): string {
     return this.$store.getters.account ? this.$store.getters.account.login : '';
-  }
+  }*/
 }

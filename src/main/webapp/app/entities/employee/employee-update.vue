@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <form name="editForm" role="form" novalidate v-on:submit.prevent="save()" >
-                <h2 id="smartproApp.employee.home.createOrEditLabel" v-text="$t('smartproApp.employee.home.createOrEditLabel')">Create or edit a Employee</h2>
+                <h2 id="smartproApp.employee.home.createOrEditLabel" v-text="$t('smartproApp.employee.home.createOrEditLabel')">Add New Employee</h2>
                 <div>
                     <div class="form-group" v-if="employee.id">
                         <label for="id" v-text="$t('global.field.id')">ID</label>
@@ -38,25 +38,6 @@
                                 This field is required.
                             </small>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-control-label" v-text="$t('smartproApp.employee.isActive')" for="employee-isActive">Is Active</label>
-                        <input type="checkbox" class="form-check" name="isActive" id="employee-isActive"
-                            :class="{'valid': !$v.employee.isActive.$invalid, 'invalid': $v.employee.isActive.$invalid }" v-model="$v.employee.isActive.$model" />
-                    </div>
-                    <div class="form-group">
-                        <label class="form-control-label" v-text="$t('smartproApp.employee.employeeSalary')" for="employee-employeeSalary">Employee Salary</label>
-                        <select class="form-control" id="employee-employeeSalary" name="employeeSalary" v-model="employee.employeeSalaryId">
-                            <option v-bind:value="null"></option>
-                            <option v-bind:value="employeeSalaryOption.id" v-for="employeeSalaryOption in employeeSalaries" :key="employeeSalaryOption.id">{{employeeSalaryOption.fullName}}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-control-label" v-text="$t('smartproApp.employee.employeeInformation')" for="employee-employeeInformation">Employee Information</label>
-                        <select class="form-control" id="employee-employeeInformation" name="employeeInformation" v-model="employee.employeeInformationId">
-                            <option v-bind:value="null"></option>
-                            <option v-bind:value="employeeInformationOption.id" v-for="employeeInformationOption in employeeInformations" :key="employeeInformationOption.id">{{employeeInformationOption.id}}</option>
-                        </select>
                     </div>
                 </div>
                 <div>

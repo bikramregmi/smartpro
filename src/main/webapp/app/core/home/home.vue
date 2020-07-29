@@ -1,13 +1,14 @@
 <template>
     <div class="login-form">
-        <section>
+        <section>                <img src="../../../content/images/avatar-default-icon.png" alt="logo">
+
             <div class="avatar">
-                <img src="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png" alt="Avatar">
+                <img src="../../../content/images/avatar-default-icon.png" alt="logo">
             </div>
             <h2 class="text-center">Member Login</h2>
             <form v-on:submit.prevent="doLogin()">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username" v-model="username" required="required">
+                    <input type="text" class="form-control" name="username" placeholder="Username" v-model="login" required="required">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" placeholder="Password" v-model="password" required="required">

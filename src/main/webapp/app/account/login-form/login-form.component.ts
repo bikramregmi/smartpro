@@ -19,7 +19,6 @@ export default class LoginForm extends Vue {
 
   public doLogin(): void {
     const data = { username: this.login, password: this.password, rememberMe: this.rememberMe };
-    alert(data.username + data.password);
     axios
       .post('api/authenticate', data)
       .then(result => {
@@ -33,8 +32,8 @@ export default class LoginForm extends Vue {
           }
         }
         this.authenticationError = false;
-        this.$root.$emit('bv::hide::modal', 'login-page');
-        this.accountService().retrieveAccount();
+        // this.$root.$emit('bv::hide::modal', 'login-page');
+        // this.accountService().retrieveAccount();
       })
       .catch(() => {
         this.authenticationError = true;

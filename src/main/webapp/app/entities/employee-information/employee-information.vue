@@ -2,19 +2,18 @@
     <div>
         <h2 id="page-heading">
             <span v-text="$t('smartproApp.employeeInformation.home.title')" id="employee-information-heading">Employee Informations</span>
-            <router-link :to="{name: 'EmployeeInformationCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-employee-information">
+           <!-- <router-link :to="{name: 'EmployeeInformationCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-employee-information">
                 <font-awesome-icon icon="plus"></font-awesome-icon>
                 <span  v-text="$t('smartproApp.employeeInformation.home.createLabel')">
                     Create a new Employee Information
                 </span>
-            </router-link>
+            </router-link>-->
         </h2>
         <b-alert :show="dismissCountDown"
             dismissible
             :variant="alertType"
             @dismissed="dismissCountDown=0"
             @dismiss-count-down="countDownChanged">
-            {{alertMessage}}
         </b-alert>
         <br/>
         <div class="alert alert-warning" v-if="!isFetching && employeeInformations && employeeInformations.length === 0">

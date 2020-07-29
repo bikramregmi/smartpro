@@ -17,7 +17,7 @@
 
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
-                <b-nav-item to="/" exact>
+                <b-nav-item to="/dashboard" exact>
                     <span>
                         <font-awesome-icon icon="home" />
                         <span v-text="$t('global.menu.home')">Home</span>
