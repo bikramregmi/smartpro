@@ -52,6 +52,38 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.attendance')">Attendance</span>
                     </b-dropdown-item>
+                    <b-dropdown-item to="/company">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.company')">Company</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/groups">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.groups')">Groups</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/ledger">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.ledger')">Ledger</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/group">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.group')">Group</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/voucher-type">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.voucherType')">VoucherType</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/product-groups">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.productGroups')">ProductGroups</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/product-item">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.productItem')">ProductItem</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/unit-of-measure">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.unitOfMeasure')">UnitOfMeasure</span>
+                    </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown

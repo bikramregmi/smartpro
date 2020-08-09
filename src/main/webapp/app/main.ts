@@ -35,6 +35,14 @@ import EmployeeSalaryService from '@/entities/employee-salary/employee-salary.se
 import EmployeeService from '@/entities/employee/employee.service';
 import PayrollGenerateService from '@/entities/payroll-generate/payroll-generate.service';
 import AttendanceService from '@/entities/attendance/attendance.service';
+import CompanyService from '@/entities/company/company.service';
+import GroupsService from '@/entities/groups/groups.service';
+import LedgerService from '@/entities/ledger/ledger.service';
+import GroupService from '@/entities/group/group.service';
+import VoucherTypeService from '@/entities/voucher-type/voucher-type.service';
+import ProductGroupsService from '@/entities/product-groups/product-groups.service';
+import ProductItemService from '@/entities/product-item/product-item.service';
+import UnitOfMeasureService from '@/entities/unit-of-measure/unit-of-measure.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -102,6 +110,14 @@ new Vue({
     employeeService: () => new EmployeeService(),
     payrollGenerateService: () => new PayrollGenerateService(),
     attendanceService: () => new AttendanceService(),
+    companyService: () => new CompanyService(),
+    groupsService: () => new GroupsService(),
+    ledgerService: () => new LedgerService(),
+    groupService: () => new GroupService(),
+    voucherTypeService: () => new VoucherTypeService(),
+    productGroupsService: () => new ProductGroupsService(),
+    productItemService: () => new ProductItemService(),
+    unitOfMeasureService: () => new UnitOfMeasureService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

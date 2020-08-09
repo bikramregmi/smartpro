@@ -1,0 +1,29 @@
+{
+  "smartproApp": {
+    "groups": {
+      "home": {
+        "title": "Groups",
+        "createLabel": "Create a new Groups",
+        "createOrEditLabel": "Create or edit a Groups",
+        "notFound": "No Groups found"
+      },
+      "created": "A new Groups is created with identifier {{ param }}",
+      "updated": "A Groups is updated with identifier {{ param }}",
+      "deleted": "A Groups is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Groups {{ id }}?"
+      },
+      "detail": {
+        "title": "Groups"
+      },
+      "name": "Name",
+      "group": "Group",
+      "extraField1": "Extra Field 1",
+      "extraField2": "Extra Field 2",
+      "extraField3": "Extra Field 3",
+      "extraField4": "Extra Field 4",
+      "extraField5": "Extra Field 5",
+      "extraField6": "Extra Field 6"
+    }
+  }
+}

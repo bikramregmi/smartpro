@@ -1,0 +1,67 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "groups",
+      "otherEntityName": "groups",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "ledger"
+    },
+    {
+      "relationshipName": "ledger",
+      "otherEntityName": "ledger",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "ledger"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "mailingName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mailingAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "panNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField1",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField2",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField3",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField5",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200806023910",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "ledger",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

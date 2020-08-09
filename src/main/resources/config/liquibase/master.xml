@@ -19,10 +19,22 @@
     <include file="config/liquibase/changelog/20200620054903_added_entity_Employee.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200625052121_added_entity_PayrollGenerate.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200703053409_added_entity_Attendance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200729085946_added_entity_Company.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200806022855_added_entity_Groups.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200806023910_added_entity_Ledger.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200806032846_added_entity_Group.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809071957_added_entity_VoucherType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809072252_added_entity_ProductGroups.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809072605_added_entity_ProductItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809072852_added_entity_UnitOfMeasure.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200620054903_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200625052121_added_entity_constraints_PayrollGenerate.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200703053409_added_entity_constraints_Attendance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200806023910_added_entity_constraints_Ledger.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809071957_added_entity_constraints_VoucherType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809072252_added_entity_constraints_ProductGroups.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200809072605_added_entity_constraints_ProductItem.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

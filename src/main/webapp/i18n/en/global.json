@@ -12,6 +12,14 @@
         "employee": "Employee",
         "payrollGenerate": "Payroll Generate",
         "attendance": "Attendance",
+        "company": "Company",
+        "groups": "Groups",
+        "ledger": "Ledger",
+        "group": "Group",
+        "voucherType": "Voucher Type",
+        "productGroups": "Product Groups",
+        "productItem": "Product Item",
+        "unitOfMeasure": "Unit Of Measure",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

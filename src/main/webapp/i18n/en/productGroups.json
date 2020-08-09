@@ -1,0 +1,26 @@
+{
+  "smartproApp": {
+    "productGroups": {
+      "home": {
+        "title": "Product Groups",
+        "createLabel": "Create a new Product Groups",
+        "createOrEditLabel": "Create or edit a Product Groups",
+        "notFound": "No Product Groups found"
+      },
+      "created": "A new Product Groups is created with identifier {{ param }}",
+      "updated": "A Product Groups is updated with identifier {{ param }}",
+      "deleted": "A Product Groups is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Groups {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Groups"
+      },
+      "name": "Name",
+      "group": "Group",
+      "quantity": "Quantity",
+      "extraField": "Extra Field",
+      "company": "Company"
+    }
+  }
+}

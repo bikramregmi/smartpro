@@ -57,6 +57,54 @@ const AttendanceUpdate = () => import('../entities/attendance/attendance-update.
 const AttendanceDetails = () => import('../entities/attendance/attendance-details.vue');
 
 const Dashboard = () => import('../core/Dashboard.vue');
+// prettier-ignore
+const Company = () => import('../entities/company/company.vue');
+// prettier-ignore
+const CompanyUpdate = () => import('../entities/company/company-update.vue');
+// prettier-ignore
+const CompanyDetails = () => import('../entities/company/company-details.vue');
+// prettier-ignore
+const Groups = () => import('../entities/groups/groups.vue');
+// prettier-ignore
+const GroupsUpdate = () => import('../entities/groups/groups-update.vue');
+// prettier-ignore
+const GroupsDetails = () => import('../entities/groups/groups-details.vue');
+// prettier-ignore
+const Ledger = () => import('../entities/ledger/ledger.vue');
+// prettier-ignore
+const LedgerUpdate = () => import('../entities/ledger/ledger-update.vue');
+// prettier-ignore
+const LedgerDetails = () => import('../entities/ledger/ledger-details.vue');
+// prettier-ignore
+const Group = () => import('../entities/group/group.vue');
+// prettier-ignore
+const GroupUpdate = () => import('../entities/group/group-update.vue');
+// prettier-ignore
+const GroupDetails = () => import('../entities/group/group-details.vue');
+// prettier-ignore
+const VoucherType = () => import('../entities/voucher-type/voucher-type.vue');
+// prettier-ignore
+const VoucherTypeUpdate = () => import('../entities/voucher-type/voucher-type-update.vue');
+// prettier-ignore
+const VoucherTypeDetails = () => import('../entities/voucher-type/voucher-type-details.vue');
+// prettier-ignore
+const ProductGroups = () => import('../entities/product-groups/product-groups.vue');
+// prettier-ignore
+const ProductGroupsUpdate = () => import('../entities/product-groups/product-groups-update.vue');
+// prettier-ignore
+const ProductGroupsDetails = () => import('../entities/product-groups/product-groups-details.vue');
+// prettier-ignore
+const ProductItem = () => import('../entities/product-item/product-item.vue');
+// prettier-ignore
+const ProductItemUpdate = () => import('../entities/product-item/product-item-update.vue');
+// prettier-ignore
+const ProductItemDetails = () => import('../entities/product-item/product-item-details.vue');
+// prettier-ignore
+const UnitOfMeasure = () => import('../entities/unit-of-measure/unit-of-measure.vue');
+// prettier-ignore
+const UnitOfMeasureUpdate = () => import('../entities/unit-of-measure/unit-of-measure-update.vue');
+// prettier-ignore
+const UnitOfMeasureDetails = () => import('../entities/unit-of-measure/unit-of-measure-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -303,6 +351,206 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/company',
+      name: 'Company',
+      component: Company,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/company/new',
+      name: 'CompanyCreate',
+      component: CompanyUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/company/:companyId/edit',
+      name: 'CompanyEdit',
+      component: CompanyUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/company/:companyId/view',
+      name: 'CompanyView',
+      component: CompanyDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/groups',
+      name: 'Groups',
+      component: Groups,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/groups/new',
+      name: 'GroupsCreate',
+      component: GroupsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/groups/:groupsId/edit',
+      name: 'GroupsEdit',
+      component: GroupsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/groups/:groupsId/view',
+      name: 'GroupsView',
+      component: GroupsDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/ledger',
+      name: 'Ledger',
+      component: Ledger,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/ledger/new',
+      name: 'LedgerCreate',
+      component: LedgerUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/ledger/:ledgerId/edit',
+      name: 'LedgerEdit',
+      component: LedgerUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/ledger/:ledgerId/view',
+      name: 'LedgerView',
+      component: LedgerDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/group',
+      name: 'Group',
+      component: Group,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/group/new',
+      name: 'GroupCreate',
+      component: GroupUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/group/:groupId/edit',
+      name: 'GroupEdit',
+      component: GroupUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/group/:groupId/view',
+      name: 'GroupView',
+      component: GroupDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/voucher-type',
+      name: 'VoucherType',
+      component: VoucherType,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/voucher-type/new',
+      name: 'VoucherTypeCreate',
+      component: VoucherTypeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/voucher-type/:voucherTypeId/edit',
+      name: 'VoucherTypeEdit',
+      component: VoucherTypeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/voucher-type/:voucherTypeId/view',
+      name: 'VoucherTypeView',
+      component: VoucherTypeDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/product-groups',
+      name: 'ProductGroups',
+      component: ProductGroups,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-groups/new',
+      name: 'ProductGroupsCreate',
+      component: ProductGroupsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-groups/:productGroupsId/edit',
+      name: 'ProductGroupsEdit',
+      component: ProductGroupsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-groups/:productGroupsId/view',
+      name: 'ProductGroupsView',
+      component: ProductGroupsDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/product-item',
+      name: 'ProductItem',
+      component: ProductItem,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-item/new',
+      name: 'ProductItemCreate',
+      component: ProductItemUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-item/:productItemId/edit',
+      name: 'ProductItemEdit',
+      component: ProductItemUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/product-item/:productItemId/view',
+      name: 'ProductItemView',
+      component: ProductItemDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/unit-of-measure',
+      name: 'UnitOfMeasure',
+      component: UnitOfMeasure,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/unit-of-measure/new',
+      name: 'UnitOfMeasureCreate',
+      component: UnitOfMeasureUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/unit-of-measure/:unitOfMeasureId/edit',
+      name: 'UnitOfMeasureEdit',
+      component: UnitOfMeasureUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/unit-of-measure/:unitOfMeasureId/view',
+      name: 'UnitOfMeasureView',
+      component: UnitOfMeasureDetails,
       meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

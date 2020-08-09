@@ -1,0 +1,49 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "group",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField1",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField2",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField3",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField4",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "extraField5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField6",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200806022855",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "jhi_groups",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

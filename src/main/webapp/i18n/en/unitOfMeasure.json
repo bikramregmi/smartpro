@@ -1,0 +1,26 @@
+{
+  "smartproApp": {
+    "unitOfMeasure": {
+      "home": {
+        "title": "Unit Of Measures",
+        "createLabel": "Create a new Unit Of Measure",
+        "createOrEditLabel": "Create or edit a Unit Of Measure",
+        "notFound": "No Unit Of Measures found"
+      },
+      "created": "A new Unit Of Measure is created with identifier {{ param }}",
+      "updated": "A Unit Of Measure is updated with identifier {{ param }}",
+      "deleted": "A Unit Of Measure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Unit Of Measure {{ id }}?"
+      },
+      "detail": {
+        "title": "Unit Of Measure"
+      },
+      "formalName": "Formal Name",
+      "type": "Type",
+      "symbol": "Symbol",
+      "decimalPlaces": "Decimal Places",
+      "extraField": "Extra Field"
+    }
+  }
+}
