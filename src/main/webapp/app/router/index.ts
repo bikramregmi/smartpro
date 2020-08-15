@@ -105,6 +105,12 @@ const UnitOfMeasure = () => import('../entities/unit-of-measure/unit-of-measure.
 const UnitOfMeasureUpdate = () => import('../entities/unit-of-measure/unit-of-measure-update.vue');
 // prettier-ignore
 const UnitOfMeasureDetails = () => import('../entities/unit-of-measure/unit-of-measure-details.vue');
+// prettier-ignore
+const AccountingVoucher = () => import('../entities/accounting-voucher/accounting-voucher.vue');
+// prettier-ignore
+const AccountingVoucherUpdate = () => import('../entities/accounting-voucher/accounting-voucher-update.vue');
+// prettier-ignore
+const AccountingVoucherDetails = () => import('../entities/accounting-voucher/accounting-voucher-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -551,6 +557,31 @@ export default new Router({
       path: '/unit-of-measure/:unitOfMeasureId/view',
       name: 'UnitOfMeasureView',
       component: UnitOfMeasureDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/accounting-voucher',
+      name: 'AccountingVoucher',
+      component: AccountingVoucher,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/accounting-voucher/new',
+      name: 'AccountingVoucherCreate',
+      component: AccountingVoucherUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/accounting-voucher/:accountingVoucherId/edit',
+      name: 'AccountingVoucherEdit',
+      component: AccountingVoucherUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/accounting-voucher/:accountingVoucherId/view',
+      name: 'AccountingVoucherView',
+      component: AccountingVoucherDetails,
       meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -1,0 +1,28 @@
+{
+  "smartproApp": {
+    "accountingVoucher": {
+      "home": {
+        "title": "Accounting Vouchers",
+        "createLabel": "Create a new Accounting Voucher",
+        "createOrEditLabel": "Create or edit a Accounting Voucher",
+        "notFound": "No Accounting Vouchers found"
+      },
+      "created": "A new Accounting Voucher is created with identifier {{ param }}",
+      "updated": "A Accounting Voucher is updated with identifier {{ param }}",
+      "deleted": "A Accounting Voucher is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Accounting Voucher {{ id }}?"
+      },
+      "detail": {
+        "title": "Accounting Voucher"
+      },
+      "accountName": "Account Name",
+      "currentBalance": "Current Balance",
+      "particulars": "Particulars",
+      "amount": "Amount",
+      "narration": "Narration",
+      "total": "Total",
+      "grandTotal": "Grand Total"
+    }
+  }
+}

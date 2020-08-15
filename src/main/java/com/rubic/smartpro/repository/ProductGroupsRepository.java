@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ProductGroupsRepository extends JpaRepository<ProductGroups, Long> {
+
+    ProductGroups findByName(String name);
 }

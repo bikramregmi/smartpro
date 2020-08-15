@@ -1,5 +1,7 @@
 package com.rubic.smartpro.service.impl;
 
+import com.rubic.smartpro.repository.CompanyRepository;
+import com.rubic.smartpro.service.SelectedCompany;
 import com.rubic.smartpro.service.ProductGroupsService;
 import com.rubic.smartpro.domain.ProductGroups;
 import com.rubic.smartpro.repository.ProductGroupsRepository;
@@ -28,9 +30,12 @@ public class ProductGroupsServiceImpl implements ProductGroupsService {
 
     private final ProductGroupsMapper productGroupsMapper;
 
-    public ProductGroupsServiceImpl(ProductGroupsRepository productGroupsRepository, ProductGroupsMapper productGroupsMapper) {
+    private final SelectedCompany selectedCompany;
+
+    public ProductGroupsServiceImpl(ProductGroupsRepository productGroupsRepository, ProductGroupsMapper productGroupsMapper, SelectedCompany selectedCompany) {
         this.productGroupsRepository = productGroupsRepository;
         this.productGroupsMapper = productGroupsMapper;
+        this.selectedCompany = selectedCompany;
     }
 
     /**
@@ -43,6 +48,7 @@ public class ProductGroupsServiceImpl implements ProductGroupsService {
     public ProductGroupsDTO save(ProductGroupsDTO productGroupsDTO) {
         log.debug("Request to save ProductGroups : {}", productGroupsDTO);
         ProductGroups productGroups = productGroupsMapper.toEntity(productGroupsDTO);
+        productGroups.setCompany( selectedCompany.getSelectedCompany());
         productGroups = productGroupsRepository.save(productGroups);
         return productGroupsMapper.toDto(productGroups);
     }

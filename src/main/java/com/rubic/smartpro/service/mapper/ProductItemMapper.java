@@ -13,6 +13,7 @@ import org.mapstruct.*;
 public interface ProductItemMapper extends EntityMapper<ProductItemDTO, ProductItem> {
 
     @Mapping(source = "company.id", target = "companyId")
+    @Mapping(source = "productGroups.name", target = "group")
     ProductItemDTO toDto(ProductItem productItem);
 
     @Mapping(source = "companyId", target = "company")

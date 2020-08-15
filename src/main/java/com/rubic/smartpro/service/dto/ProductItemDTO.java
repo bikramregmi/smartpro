@@ -7,13 +7,13 @@ import java.io.Serializable;
  * A DTO for the {@link com.rubic.smartpro.domain.ProductItem} entity.
  */
 public class ProductItemDTO implements Serializable {
-    
+
     private Long id;
 
     @NotNull
     private String name;
 
-    private String group;
+    private Long groupId;
 
     private String units;
 
@@ -25,9 +25,11 @@ public class ProductItemDTO implements Serializable {
 
     private String extraField;
 
+    private String group;
+
 
     private Long companyId;
-    
+
     public Long getId() {
         return id;
     }
@@ -44,12 +46,12 @@ public class ProductItemDTO implements Serializable {
         this.name = name;
     }
 
-    public String getGroup() {
-        return group;
+    public Long getGroupId() {
+        return groupId;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
     }
 
     public String getUnits() {
@@ -100,6 +102,14 @@ public class ProductItemDTO implements Serializable {
         this.companyId = companyId;
     }
 
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -118,18 +128,19 @@ public class ProductItemDTO implements Serializable {
     }
 
     // prettier-ignore
+
     @Override
     public String toString() {
         return "ProductItemDTO{" +
-            "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", group='" + getGroup() + "'" +
-            ", units='" + getUnits() + "'" +
-            ", rate='" + getRate() + "'" +
-            ", quantityPerRate='" + getQuantityPerRate() + "'" +
-            ", value='" + getValue() + "'" +
-            ", extraField='" + getExtraField() + "'" +
-            ", companyId=" + getCompanyId() +
-            "}";
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", groupId=" + groupId +
+            ", units='" + units + '\'' +
+            ", rate='" + rate + '\'' +
+            ", quantityPerRate='" + quantityPerRate + '\'' +
+            ", value='" + value + '\'' +
+            ", extraField='" + extraField + '\'' +
+            ", companyId=" + companyId +
+            '}';
     }
 }

@@ -1,0 +1,45 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "accountName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "currentBalance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "particulars",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "narration",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grandTotal",
+      "fieldType": "Double"
+    }
+  ],
+  "changelogDate": "20200814041132",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "accounting_voucher",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

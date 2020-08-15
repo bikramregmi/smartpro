@@ -24,8 +24,8 @@ public class ProductItem implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "jhi_group")
-    private String group;
+//    @Column(name = "jhi_group")
+//    private String group;
 
     @Column(name = "units")
     private String units;
@@ -45,6 +45,10 @@ public class ProductItem implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties(value = "productItems", allowSetters = true)
     private Company company;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "productItems", allowSetters = true)
+    private ProductGroups productGroups;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -68,17 +72,12 @@ public class ProductItem implements Serializable {
         this.name = name;
     }
 
-    public String getGroup() {
-        return group;
+    public ProductGroups getProductGroups() {
+        return productGroups;
     }
 
-    public ProductItem group(String group) {
-        this.group = group;
-        return this;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
+    public void setProductGroups(ProductGroups productGroups) {
+        this.productGroups = productGroups;
     }
 
     public String getUnits() {
@@ -177,17 +176,19 @@ public class ProductItem implements Serializable {
     }
 
     // prettier-ignore
+
     @Override
     public String toString() {
         return "ProductItem{" +
-            "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", group='" + getGroup() + "'" +
-            ", units='" + getUnits() + "'" +
-            ", rate='" + getRate() + "'" +
-            ", quantityPerRate='" + getQuantityPerRate() + "'" +
-            ", value='" + getValue() + "'" +
-            ", extraField='" + getExtraField() + "'" +
-            "}";
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", units='" + units + '\'' +
+            ", rate='" + rate + '\'' +
+            ", quantityPerRate='" + quantityPerRate + '\'' +
+            ", value='" + value + '\'' +
+            ", extraField='" + extraField + '\'' +
+            ", company=" + company +
+            ", productGroups=" + productGroups +
+            '}';
     }
 }

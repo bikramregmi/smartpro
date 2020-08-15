@@ -20,6 +20,7 @@
         "productGroups": "Product Groups",
         "productItem": "Product Item",
         "unitOfMeasure": "Unit Of Measure",
+        "accountingVoucher": "Accounting Voucher",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

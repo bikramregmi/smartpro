@@ -1,8 +1,10 @@
 package com.rubic.smartpro.service.impl;
 
+import com.rubic.smartpro.repository.ProductGroupsRepository;
 import com.rubic.smartpro.service.ProductItemService;
 import com.rubic.smartpro.domain.ProductItem;
 import com.rubic.smartpro.repository.ProductItemRepository;
+import com.rubic.smartpro.service.SelectedCompany;
 import com.rubic.smartpro.service.dto.ProductItemDTO;
 import com.rubic.smartpro.service.mapper.ProductItemMapper;
 import org.slf4j.Logger;
@@ -28,9 +30,15 @@ public class ProductItemServiceImpl implements ProductItemService {
 
     private final ProductItemMapper productItemMapper;
 
-    public ProductItemServiceImpl(ProductItemRepository productItemRepository, ProductItemMapper productItemMapper) {
+    private final SelectedCompany selectedCompany;
+
+    private final ProductGroupsRepository productGroupsRepository;
+
+    public ProductItemServiceImpl(ProductItemRepository productItemRepository, ProductItemMapper productItemMapper, SelectedCompany selectedCompany, ProductGroupsRepository productGroupsRepository) {
         this.productItemRepository = productItemRepository;
         this.productItemMapper = productItemMapper;
+        this.selectedCompany = selectedCompany;
+        this.productGroupsRepository = productGroupsRepository;
     }
 
     /**
@@ -43,6 +51,8 @@ public class ProductItemServiceImpl implements ProductItemService {
     public ProductItemDTO save(ProductItemDTO productItemDTO) {
         log.debug("Request to save ProductItem : {}", productItemDTO);
         ProductItem productItem = productItemMapper.toEntity(productItemDTO);
+        productItem.setCompany( selectedCompany.getSelectedCompany());
+        productItem.setProductGroups(productGroupsRepository.findByName(productItemDTO.getGroup()));
         productItem = productItemRepository.save(productItem);
         return productItemMapper.toDto(productItem);
     }
