@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface AccountingVoucherRepository extends JpaRepository<AccountingVoucher, Long> {
+    AccountingVoucher findByAccountName(String referenceNumber);
 }

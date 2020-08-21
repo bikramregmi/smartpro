@@ -1,0 +1,28 @@
+{
+  "smartproApp": {
+    "salesVoucherTypeTotal": {
+      "home": {
+        "title": "Sales Voucher Type Totals",
+        "createLabel": "Create a new Sales Voucher Type Total",
+        "createOrEditLabel": "Create or edit a Sales Voucher Type Total",
+        "notFound": "No Sales Voucher Type Totals found"
+      },
+      "created": "A new Sales Voucher Type Total is created with identifier {{ param }}",
+      "updated": "A Sales Voucher Type Total is updated with identifier {{ param }}",
+      "deleted": "A Sales Voucher Type Total is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sales Voucher Type Total {{ id }}?"
+      },
+      "detail": {
+        "title": "Sales Voucher Type Total"
+      },
+      "item": "Item",
+      "quantityTotal": "Quantity Total",
+      "rateTotal": "Rate Total",
+      "amountTotal": "Amount Total",
+      "referenceNumber": "Reference Number",
+      "extraField": "Extra Field",
+      "salesVoucherType": "Sales Voucher Type"
+    }
+  }
+}

@@ -44,6 +44,8 @@ import ProductGroupsService from '@/entities/product-groups/product-groups.servi
 import ProductItemService from '@/entities/product-item/product-item.service';
 import UnitOfMeasureService from '@/entities/unit-of-measure/unit-of-measure.service';
 import AccountingVoucherService from '@/entities/accounting-voucher/accounting-voucher.service';
+import SalesVoucherTypeService from '@/entities/sales-voucher-type/sales-voucher-type.service';
+import SalesVoucherTypeTotalService from '@/entities/sales-voucher-type-total/sales-voucher-type-total.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -120,6 +122,8 @@ new Vue({
     productItemService: () => new ProductItemService(),
     unitOfMeasureService: () => new UnitOfMeasureService(),
     accountingVoucherService: () => new AccountingVoucherService(),
+    salesVoucherTypeService: () => new SalesVoucherTypeService(),
+    salesVoucherTypeTotalService: () => new SalesVoucherTypeTotalService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

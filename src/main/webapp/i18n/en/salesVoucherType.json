@@ -1,0 +1,27 @@
+{
+  "smartproApp": {
+    "salesVoucherType": {
+      "home": {
+        "title": "Sales Voucher Types",
+        "createLabel": "Create a new Sales Voucher Type",
+        "createOrEditLabel": "Create or edit a Sales Voucher Type",
+        "notFound": "No Sales Voucher Types found"
+      },
+      "created": "A new Sales Voucher Type is created with identifier {{ param }}",
+      "updated": "A Sales Voucher Type is updated with identifier {{ param }}",
+      "deleted": "A Sales Voucher Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sales Voucher Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Sales Voucher Type"
+      },
+      "item": "Item",
+      "quantity": "Quantity",
+      "rate": "Rate",
+      "amount": "Amount",
+      "extra": "Extra",
+      "accountingVoucher": "Accounting Voucher"
+    }
+  }
+}

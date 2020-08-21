@@ -88,6 +88,14 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.accountingVoucher')">AccountingVoucher</span>
                     </b-dropdown-item>
+                    <b-dropdown-item to="/sales-voucher-type">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.salesVoucherType')">SalesVoucherType</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/sales-voucher-type-total">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.salesVoucherTypeTotal')">SalesVoucherTypeTotal</span>
+                    </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown

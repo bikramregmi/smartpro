@@ -21,6 +21,8 @@
         "productItem": "Product Item",
         "unitOfMeasure": "Unit Of Measure",
         "accountingVoucher": "Accounting Voucher",
+        "salesVoucherType": "Sales Voucher Type",
+        "salesVoucherTypeTotal": "Sales Voucher Type Total",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

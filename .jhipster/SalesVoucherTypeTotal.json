@@ -1,0 +1,47 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "salesVoucherType",
+      "otherEntityName": "salesVoucherType",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "salesVoucherTypeTotal"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "item",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantityTotal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rateTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "amountTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "referenceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extraField",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200817083626",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "sales_voucher_type_total",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

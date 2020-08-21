@@ -111,6 +111,18 @@ const AccountingVoucher = () => import('../entities/accounting-voucher/accountin
 const AccountingVoucherUpdate = () => import('../entities/accounting-voucher/accounting-voucher-update.vue');
 // prettier-ignore
 const AccountingVoucherDetails = () => import('../entities/accounting-voucher/accounting-voucher-details.vue');
+// prettier-ignore
+const SalesVoucherType = () => import('../entities/sales-voucher-type/sales-voucher-type.vue');
+// prettier-ignore
+const SalesVoucherTypeUpdate = () => import('../entities/sales-voucher-type/sales-voucher-type-update.vue');
+// prettier-ignore
+const SalesVoucherTypeDetails = () => import('../entities/sales-voucher-type/sales-voucher-type-details.vue');
+// prettier-ignore
+const SalesVoucherTypeTotal = () => import('../entities/sales-voucher-type-total/sales-voucher-type-total.vue');
+// prettier-ignore
+const SalesVoucherTypeTotalUpdate = () => import('../entities/sales-voucher-type-total/sales-voucher-type-total-update.vue');
+// prettier-ignore
+const SalesVoucherTypeTotalDetails = () => import('../entities/sales-voucher-type-total/sales-voucher-type-total-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -582,6 +594,56 @@ export default new Router({
       path: '/accounting-voucher/:accountingVoucherId/view',
       name: 'AccountingVoucherView',
       component: AccountingVoucherDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/sales-voucher-type',
+      name: 'SalesVoucherType',
+      component: SalesVoucherType,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type/new',
+      name: 'SalesVoucherTypeCreate',
+      component: SalesVoucherTypeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type/:salesVoucherTypeId/edit',
+      name: 'SalesVoucherTypeEdit',
+      component: SalesVoucherTypeUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type/:salesVoucherTypeId/view',
+      name: 'SalesVoucherTypeView',
+      component: SalesVoucherTypeDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/sales-voucher-type-total',
+      name: 'SalesVoucherTypeTotal',
+      component: SalesVoucherTypeTotal,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type-total/new',
+      name: 'SalesVoucherTypeTotalCreate',
+      component: SalesVoucherTypeTotalUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type-total/:salesVoucherTypeTotalId/edit',
+      name: 'SalesVoucherTypeTotalEdit',
+      component: SalesVoucherTypeTotalUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/sales-voucher-type-total/:salesVoucherTypeTotalId/view',
+      name: 'SalesVoucherTypeTotalView',
+      component: SalesVoucherTypeTotalDetails,
       meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -1,7 +1,10 @@
 package com.rubic.smartpro.service.dto;
 
+import com.rubic.smartpro.domain.SalesVoucherType;
+
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * A DTO for the {@link com.rubic.smartpro.domain.AccountingVoucher} entity.
@@ -26,6 +29,8 @@ public class AccountingVoucherDTO implements Serializable {
     private Double grandTotal;
 
     private String accountingVoucherType;
+
+    private List<SalesVoucherType> salesVoucherTypes;
 
 
     public Long getId() {
@@ -98,6 +103,14 @@ public class AccountingVoucherDTO implements Serializable {
 
     public void setAccountingVoucherType(String accountingVoucherType) {
         this.accountingVoucherType = accountingVoucherType;
+    }
+
+    public List<SalesVoucherType> getSalesVoucherTypes() {
+        return salesVoucherTypes;
+    }
+
+    public void setSalesVoucherTypes(List<SalesVoucherType> salesVoucherTypes) {
+        this.salesVoucherTypes = salesVoucherTypes;
     }
 
     @Override
