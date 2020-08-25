@@ -2,6 +2,7 @@ package com.rubic.smartpro.service.dto;
 
 import com.rubic.smartpro.domain.SalesVoucherType;
 
+import javax.persistence.Column;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.List;
@@ -32,6 +33,11 @@ public class AccountingVoucherDTO implements Serializable {
 
     private List<SalesVoucherType> salesVoucherTypes;
 
+    private String voucherTypeLedger;
+
+    private Double debitTotal;
+
+    private Double creditTotal;
 
     public Long getId() {
         return id;
@@ -111,6 +117,30 @@ public class AccountingVoucherDTO implements Serializable {
 
     public void setSalesVoucherTypes(List<SalesVoucherType> salesVoucherTypes) {
         this.salesVoucherTypes = salesVoucherTypes;
+    }
+
+    public String getVoucherTypeLedger() {
+        return voucherTypeLedger;
+    }
+
+    public void setVoucherTypeLedger(String voucherTypeLedger) {
+        this.voucherTypeLedger = voucherTypeLedger;
+    }
+
+    public Double getDebitTotal() {
+        return debitTotal;
+    }
+
+    public void setDebitTotal(Double debitTotal) {
+        this.debitTotal = debitTotal;
+    }
+
+    public Double getCreditTotal() {
+        return creditTotal;
+    }
+
+    public void setCreditTotal(Double creditTotal) {
+        this.creditTotal = creditTotal;
     }
 
     @Override

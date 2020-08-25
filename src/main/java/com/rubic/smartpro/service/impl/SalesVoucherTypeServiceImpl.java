@@ -2,6 +2,7 @@ package com.rubic.smartpro.service.impl;
 
 import com.rubic.smartpro.domain.AccountingVoucher;
 import com.rubic.smartpro.domain.SalesVoucherTypeTotal;
+import com.rubic.smartpro.enumConstants.VoucherType;
 import com.rubic.smartpro.repository.AccountingVoucherRepository;
 import com.rubic.smartpro.repository.SalesVoucherTypeTotalRepository;
 import com.rubic.smartpro.service.SalesVoucherTypeService;
@@ -60,7 +61,7 @@ public class SalesVoucherTypeServiceImpl implements SalesVoucherTypeService {
         AccountingVoucher accountingVoucher = accountingVoucherRepository.findByAccountName(salesVoucherTypeDTO.getReferenceNumber());
         SalesVoucherType salesVoucherType = salesVoucherTypeMapper.toEntity(salesVoucherTypeDTO);
         salesVoucherType.setSalesVoucherTypeTotal(checkTotal(salesVoucherTypeDTO));
-          if (accountingVoucher != null)
+        if (accountingVoucher != null)
             salesVoucherType.setAccountingVoucher(accountingVoucher);
         salesVoucherType = salesVoucherTypeRepository.save(salesVoucherType);
         return salesVoucherTypeMapper.toDto(salesVoucherType);
@@ -70,20 +71,62 @@ public class SalesVoucherTypeServiceImpl implements SalesVoucherTypeService {
         SalesVoucherTypeTotal salesVoucherTypeTotal = salesVoucherTypeTotalRepository.findByReferenceNumber(salesVoucherTypeDTO.getReferenceNumber());
         if (salesVoucherTypeTotal != null) {
             if (salesVoucherTypeDTO.getId() != null) {
-                SalesVoucherType salesVoucherType =salesVoucherTypeMapper.toEntity(findUniqueSalesVoucher(salesVoucherTypeDTO));
-                salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeDTO.getAmount()+(salesVoucherTypeTotal.getAmountTotal()-salesVoucherType.getAmount()));
-                salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeDTO.getQuantity()+(salesVoucherTypeTotal.getQuantityTotal()-salesVoucherType.getQuantity()));
-                salesVoucherTypeTotal.setRateTotal(salesVoucherTypeDTO.getRate()+(salesVoucherTypeTotal.getRateTotal()-salesVoucherType.getRate()));
+                SalesVoucherType salesVoucherType = salesVoucherTypeMapper.toEntity(findUniqueSalesVoucher(salesVoucherTypeDTO));
+                if (salesVoucherTypeDTO.getVoucherType().equals("Journal")) {
+                    if (salesVoucherTypeDTO.getDebit() != null) {
+                        if(salesVoucherTypeTotal.getCreditTotal()==null)
+                            salesVoucherTypeTotal.setCreditTotal(0.0);
+                        salesVoucherTypeTotal.setDebitTotal(salesVoucherTypeDTO.getDebit() + (salesVoucherTypeTotal.getDebitTotal() - salesVoucherType.getDebit()));
+                    }
+                    if (salesVoucherTypeDTO.getCredit() != null) {
+                        if (salesVoucherTypeTotal.getCreditTotal() == null)
+                            salesVoucherTypeTotal.setCreditTotal(0.0);
+                        salesVoucherTypeTotal.setCreditTotal(salesVoucherTypeDTO.getCredit() + (salesVoucherTypeTotal.getCreditTotal() - salesVoucherType.getCredit()));
+                    }
+                } else
+                    salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeDTO.getAmount() + (salesVoucherTypeTotal.getAmountTotal() - salesVoucherType.getAmount()));
+                if (salesVoucherTypeDTO.getQuantity() != null)
+                    salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeDTO.getQuantity() + (salesVoucherTypeTotal.getQuantityTotal() - salesVoucherType.getQuantity()));
+                if (salesVoucherTypeDTO.getRate() != null)
+                    salesVoucherTypeTotal.setRateTotal(salesVoucherTypeDTO.getRate() + (salesVoucherTypeTotal.getRateTotal() - salesVoucherType.getRate()));
             } else {
-                salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeTotal.getAmountTotal() + salesVoucherTypeDTO.getAmount());
-                salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeTotal.getQuantityTotal() + salesVoucherTypeDTO.getQuantity());
-                salesVoucherTypeTotal.setRateTotal(salesVoucherTypeTotal.getRateTotal() + salesVoucherTypeDTO.getRate());
+                if (salesVoucherTypeDTO.getVoucherType().equals("Journal")) {
+                    if (salesVoucherTypeDTO.getDebit() != null) {
+                        if (salesVoucherTypeTotal.getDebitTotal() == null)
+                            salesVoucherTypeTotal.setDebitTotal(0.0);
+                        salesVoucherTypeTotal.setDebitTotal(salesVoucherTypeDTO.getDebit() + salesVoucherTypeTotal.getDebitTotal());
+                    }
+                    if (salesVoucherTypeDTO.getCredit() != null) {
+                        if (salesVoucherTypeTotal.getCreditTotal() == null)
+                            salesVoucherTypeTotal.setCreditTotal(0.0);
+                        salesVoucherTypeTotal.setCreditTotal(salesVoucherTypeDTO.getCredit() + salesVoucherTypeTotal.getCreditTotal());
+                    }
+                } else
+                    salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeTotal.getAmountTotal() + salesVoucherTypeDTO.getAmount());
+                if (salesVoucherTypeDTO.getQuantity() != null)
+                    salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeTotal.getQuantityTotal() + salesVoucherTypeDTO.getQuantity());
+                if (salesVoucherTypeDTO.getRate() != null)
+                    salesVoucherTypeTotal.setRateTotal(salesVoucherTypeTotal.getRateTotal() + salesVoucherTypeDTO.getRate());
             }
         } else {
             salesVoucherTypeTotal = new SalesVoucherTypeTotal();
-            salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeDTO.getAmount());
-            salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeDTO.getQuantity());
-            salesVoucherTypeTotal.setRateTotal(salesVoucherTypeDTO.getRate());
+            if (salesVoucherTypeDTO.getVoucherType().equals("Journal")) {
+                if (salesVoucherTypeDTO.getDebit() != null) {
+                    if (salesVoucherTypeTotal.getDebitTotal() == null)
+                        salesVoucherTypeTotal.setDebitTotal(0.0);
+                    salesVoucherTypeTotal.setDebitTotal(salesVoucherTypeDTO.getDebit());
+                }
+                if (salesVoucherTypeDTO.getCredit() != null) {
+                    if (salesVoucherTypeTotal.getCreditTotal() == null)
+                        salesVoucherTypeTotal.setCreditTotal(0.0);
+                    salesVoucherTypeTotal.setCreditTotal(salesVoucherTypeDTO.getCredit());
+                }
+            } else
+                salesVoucherTypeTotal.setAmountTotal(salesVoucherTypeDTO.getAmount());
+            if (salesVoucherTypeDTO.getQuantity() != null)
+                salesVoucherTypeTotal.setQuantityTotal(salesVoucherTypeDTO.getQuantity());
+            if (salesVoucherTypeDTO.getRate() != null)
+                salesVoucherTypeTotal.setRateTotal(salesVoucherTypeDTO.getRate());
         }
         salesVoucherTypeTotal.setReferenceNumber(salesVoucherTypeDTO.getReferenceNumber());
         return salesVoucherTypeTotalRepository.save(salesVoucherTypeTotal);
@@ -131,6 +174,6 @@ public class SalesVoucherTypeServiceImpl implements SalesVoucherTypeService {
 
     @Override
     public SalesVoucherTypeDTO findUniqueSalesVoucher(SalesVoucherTypeDTO salesVoucherTypeDTO) {
-       return salesVoucherTypeMapper.toDto(salesVoucherTypeRepository.findByUniqueKeyAndReferenceNumber(salesVoucherTypeDTO.getUniqueKey(),salesVoucherTypeDTO.getReferenceNumber()));
+        return salesVoucherTypeMapper.toDto(salesVoucherTypeRepository.findByUniqueKeyAndReferenceNumberAndVoucherType(salesVoucherTypeDTO.getUniqueKey(), salesVoucherTypeDTO.getReferenceNumber(), VoucherType.valueOf(salesVoucherTypeDTO.getVoucherType())));
     }
 }

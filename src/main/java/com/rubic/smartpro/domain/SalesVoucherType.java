@@ -1,6 +1,7 @@
 package com.rubic.smartpro.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.rubic.smartpro.enumConstants.VoucherType;
 
 import javax.persistence.*;
 
@@ -39,6 +40,19 @@ public class SalesVoucherType implements Serializable {
 
     @Column(name = "referenceNumber")
     private String referenceNumber;
+
+    @Column(name = "partyAccountName")
+    private String partyAccountName;
+
+    @Column(name= "voucher_type")
+    @Enumerated(EnumType.STRING)
+    private VoucherType voucherType;
+
+    @Column(name = "amount_debit")
+    private Double debit;
+
+    @Column(name = "amount_credit")
+    private Double credit;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "salesVoucherTypes", allowSetters = true)
@@ -138,6 +152,22 @@ public class SalesVoucherType implements Serializable {
         this.extra = extra;
     }
 
+    public Double getDebit() {
+        return debit;
+    }
+
+    public void setDebit(Double debit) {
+        this.debit = debit;
+    }
+
+    public Double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Double credit) {
+        this.credit = credit;
+    }
+
     public AccountingVoucher getAccountingVoucher() {
         return accountingVoucher;
     }
@@ -159,6 +189,22 @@ public class SalesVoucherType implements Serializable {
 
     public void setSalesVoucherTypeTotal(SalesVoucherTypeTotal salesVoucherTypeTotal) {
         this.salesVoucherTypeTotal = salesVoucherTypeTotal;
+    }
+
+    public String getPartyAccountName() {
+        return partyAccountName;
+    }
+
+    public void setPartyAccountName(String partyAccountName) {
+        this.partyAccountName = partyAccountName;
+    }
+
+    public VoucherType getVoucherType() {
+        return voucherType;
+    }
+
+    public void setVoucherType(VoucherType voucherType) {
+        this.voucherType = voucherType;
     }
 
     @Override

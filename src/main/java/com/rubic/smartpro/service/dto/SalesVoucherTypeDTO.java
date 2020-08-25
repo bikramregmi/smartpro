@@ -21,12 +21,20 @@ public class SalesVoucherTypeDTO implements Serializable {
 
     private String referenceNumber;
 
-
     private Long accountingVoucherId;
 
     private SalesVoucherTypeTotalDTO salesVoucherTypeTotalDTO;
 
     private String uniqueKey;
+
+    private String partyAccountName;
+
+    private String voucherType;
+
+    private Double debit;
+
+    private Double credit;
+
 
     public String getUniqueKey() {
         return uniqueKey;
@@ -106,6 +114,38 @@ public class SalesVoucherTypeDTO implements Serializable {
 
     public void setSalesVoucherTypeTotalDTO(SalesVoucherTypeTotalDTO salesVoucherTypeTotalDTO) {
         this.salesVoucherTypeTotalDTO = salesVoucherTypeTotalDTO;
+    }
+
+    public String getPartyAccountName() {
+        return partyAccountName;
+    }
+
+    public void setPartyAccountName(String partyAccountName) {
+        this.partyAccountName = partyAccountName;
+    }
+
+    public String getVoucherType() {
+        return voucherType;
+    }
+
+    public void setVoucherType(String voucherType) {
+        this.voucherType = voucherType;
+    }
+
+    public Double getDebit() {
+        return debit;
+    }
+
+    public void setDebit(Double debit) {
+        this.debit = debit;
+    }
+
+    public Double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Double credit) {
+        this.credit = credit;
     }
 
     @Override

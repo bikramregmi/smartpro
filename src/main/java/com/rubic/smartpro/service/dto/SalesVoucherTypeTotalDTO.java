@@ -6,7 +6,7 @@ import java.io.Serializable;
  * A DTO for the {@link com.rubic.smartpro.domain.SalesVoucherTypeTotal} entity.
  */
 public class SalesVoucherTypeTotalDTO implements Serializable {
-    
+
     private Long id;
 
     private String item;
@@ -21,7 +21,11 @@ public class SalesVoucherTypeTotalDTO implements Serializable {
 
     private String extraField;
 
-    
+    private Double debitTotal;
+
+    private Double creditTotal;
+
+
     public Long getId() {
         return id;
     }
@@ -76,6 +80,22 @@ public class SalesVoucherTypeTotalDTO implements Serializable {
 
     public void setExtraField(String extraField) {
         this.extraField = extraField;
+    }
+
+    public Double getDebitTotal() {
+        return debitTotal;
+    }
+
+    public void setDebitTotal(Double debitTotal) {
+        this.debitTotal = debitTotal;
+    }
+
+    public Double getCreditTotal() {
+        return creditTotal;
+    }
+
+    public void setCreditTotal(Double creditTotal) {
+        this.creditTotal = creditTotal;
     }
 
     @Override

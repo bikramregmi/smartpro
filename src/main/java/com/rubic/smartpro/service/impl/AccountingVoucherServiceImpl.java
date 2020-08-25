@@ -1,5 +1,7 @@
 package com.rubic.smartpro.service.impl;
 
+import com.rubic.smartpro.enumConstants.AccountingVoucherType;
+import com.rubic.smartpro.enumConstants.VoucherTypeLedger;
 import com.rubic.smartpro.service.AccountingVoucherService;
 import com.rubic.smartpro.domain.AccountingVoucher;
 import com.rubic.smartpro.repository.AccountingVoucherRepository;
@@ -13,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -42,11 +45,14 @@ public class AccountingVoucherServiceImpl implements AccountingVoucherService {
     @Override
     public AccountingVoucherDTO save(AccountingVoucherDTO accountingVoucherDTO) {
         log.debug("Request to save AccountingVoucher : {}", accountingVoucherDTO);
+        if(Objects.equals(accountingVoucherDTO.getAccountingVoucherType(), "Sales"))
+            accountingVoucherDTO.setVoucherTypeLedger(VoucherTypeLedger.SalesLedger.toString());
+        else if(Objects.equals(accountingVoucherDTO.getAccountingVoucherType(), "Buy"))
+            accountingVoucherDTO.setVoucherTypeLedger(VoucherTypeLedger.BuyLedger.toString());
         AccountingVoucher accountingVoucher = accountingVoucherMapper.toEntity(accountingVoucherDTO);
         accountingVoucher = accountingVoucherRepository.save(accountingVoucher);
         return accountingVoucherMapper.toDto(accountingVoucher);
     }
-
     /**
      * Get all the accountingVouchers.
      *

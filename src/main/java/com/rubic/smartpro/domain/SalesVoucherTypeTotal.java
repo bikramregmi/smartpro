@@ -38,6 +38,12 @@ public class SalesVoucherTypeTotal implements Serializable {
     @Column(name = "extra_field")
     private String extraField;
 
+    @Column(name = "amount_debit_total")
+    private Double debitTotal;
+
+    @Column(name = "amount_credit_total")
+    private Double creditTotal;
+
     @OneToMany
     private Set<SalesVoucherType> salesVoucherTypes = new HashSet<>();
 
@@ -121,6 +127,22 @@ public class SalesVoucherTypeTotal implements Serializable {
 
     public void setExtraField(String extraField) {
         this.extraField = extraField;
+    }
+
+    public Double getDebitTotal() {
+        return debitTotal;
+    }
+
+    public void setDebitTotal(Double debitTotal) {
+        this.debitTotal = debitTotal;
+    }
+
+    public Double getCreditTotal() {
+        return creditTotal;
+    }
+
+    public void setCreditTotal(Double creditTotal) {
+        this.creditTotal = creditTotal;
     }
 
     public Set<SalesVoucherType> getSalesVoucherTypes() {
