@@ -23,6 +23,8 @@
         "accountingVoucher": "Accounting Voucher",
         "salesVoucherType": "Sales Voucher Type",
         "salesVoucherTypeTotal": "Sales Voucher Type Total",
+        "inventoryVoucher": "Inventory Voucher",
+        "inventoryVoucherEntry": "Inventory Voucher Entry",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

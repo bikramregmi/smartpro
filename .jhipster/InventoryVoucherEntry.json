@@ -1,0 +1,60 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "inventoryVoucher",
+      "otherEntityName": "inventoryVoucher",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "inventoryVoucherEntry"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "srItem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "srQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "srRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "srAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "desItem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "desQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "desRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "desAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "extraField",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200825095953",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "inventory_voucher_entry",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}

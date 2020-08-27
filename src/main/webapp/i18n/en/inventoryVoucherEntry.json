@@ -1,0 +1,31 @@
+{
+  "smartproApp": {
+    "inventoryVoucherEntry": {
+      "home": {
+        "title": "Inventory Voucher Entries",
+        "createLabel": "Create a new Inventory Voucher Entry",
+        "createOrEditLabel": "Create or edit a Inventory Voucher Entry",
+        "notFound": "No Inventory Voucher Entries found"
+      },
+      "created": "A new Inventory Voucher Entry is created with identifier {{ param }}",
+      "updated": "A Inventory Voucher Entry is updated with identifier {{ param }}",
+      "deleted": "A Inventory Voucher Entry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Inventory Voucher Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Inventory Voucher Entry"
+      },
+      "srItem": "Sr Item",
+      "srQuantity": "Sr Quantity",
+      "srRate": "Sr Rate",
+      "srAmount": "Sr Amount",
+      "desItem": "Des Item",
+      "desQuantity": "Des Quantity",
+      "desRate": "Des Rate",
+      "desAmount": "Des Amount",
+      "extraField": "Extra Field",
+      "inventoryVoucher": "Inventory Voucher"
+    }
+  }
+}

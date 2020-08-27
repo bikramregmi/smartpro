@@ -30,6 +30,8 @@
     <include file="config/liquibase/changelog/20200814041132_added_entity_AccountingVoucher.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200815145436_added_entity_SalesVoucherType.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200817083626_added_entity_SalesVoucherTypeTotal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200825055104_added_entity_InventoryVoucher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200825095953_added_entity_InventoryVoucherEntry.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200620054903_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200625052121_added_entity_constraints_PayrollGenerate.xml" relativeToChangelogFile="false"/>
@@ -39,6 +41,7 @@
     <include file="config/liquibase/changelog/20200809072252_added_entity_constraints_ProductGroups.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200809072605_added_entity_constraints_ProductItem.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200815145436_added_entity_constraints_SalesVoucherType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200825095953_added_entity_constraints_InventoryVoucherEntry.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>
