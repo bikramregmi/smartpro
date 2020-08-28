@@ -52,6 +52,9 @@ public class AccountingVoucher implements Serializable {
     @Enumerated(EnumType.STRING)
     private VoucherTypeLedger voucherTypeLedger;
 
+    @ManyToOne
+    private Company company;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -157,6 +160,14 @@ public class AccountingVoucher implements Serializable {
 
     public void setAccountingVoucherType(AccountingVoucherType accountingVoucherType) {
         AccountingVoucherType = accountingVoucherType;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

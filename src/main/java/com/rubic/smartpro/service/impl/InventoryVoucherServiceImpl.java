@@ -3,6 +3,7 @@ package com.rubic.smartpro.service.impl;
 import com.rubic.smartpro.service.InventoryVoucherService;
 import com.rubic.smartpro.domain.InventoryVoucher;
 import com.rubic.smartpro.repository.InventoryVoucherRepository;
+import com.rubic.smartpro.service.SelectedCompany;
 import com.rubic.smartpro.service.dto.InventoryVoucherDTO;
 import com.rubic.smartpro.service.mapper.InventoryVoucherMapper;
 import org.slf4j.Logger;
@@ -29,9 +30,12 @@ public class InventoryVoucherServiceImpl implements InventoryVoucherService {
 
     private final InventoryVoucherMapper inventoryVoucherMapper;
 
-    public InventoryVoucherServiceImpl(InventoryVoucherRepository inventoryVoucherRepository, InventoryVoucherMapper inventoryVoucherMapper) {
+    private final SelectedCompany selectedCompany;
+
+    public InventoryVoucherServiceImpl(InventoryVoucherRepository inventoryVoucherRepository, InventoryVoucherMapper inventoryVoucherMapper, SelectedCompany selectedCompany) {
         this.inventoryVoucherRepository = inventoryVoucherRepository;
         this.inventoryVoucherMapper = inventoryVoucherMapper;
+        this.selectedCompany = selectedCompany;
     }
 
     /**
@@ -50,6 +54,7 @@ public class InventoryVoucherServiceImpl implements InventoryVoucherService {
             inventoryVoucher = inventoryVoucherRepository.findByVoucherNumber(inventoryVoucherDTO.getVoucherNumber());
         }
         inventoryVoucher = inventoryVoucherMapper.toEntity(inventoryVoucherDTO);
+        inventoryVoucher.setCompany(selectedCompany.getSelectedCompany());
         inventoryVoucher = inventoryVoucherRepository.save(inventoryVoucher);
         return inventoryVoucherMapper.toDto(inventoryVoucher);
     }

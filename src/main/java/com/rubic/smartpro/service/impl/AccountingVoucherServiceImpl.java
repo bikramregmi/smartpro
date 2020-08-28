@@ -1,10 +1,10 @@
 package com.rubic.smartpro.service.impl;
 
-import com.rubic.smartpro.enumConstants.AccountingVoucherType;
 import com.rubic.smartpro.enumConstants.VoucherTypeLedger;
 import com.rubic.smartpro.service.AccountingVoucherService;
 import com.rubic.smartpro.domain.AccountingVoucher;
 import com.rubic.smartpro.repository.AccountingVoucherRepository;
+import com.rubic.smartpro.service.SelectedCompany;
 import com.rubic.smartpro.service.dto.AccountingVoucherDTO;
 import com.rubic.smartpro.service.mapper.AccountingVoucherMapper;
 import org.slf4j.Logger;
@@ -31,9 +31,12 @@ public class AccountingVoucherServiceImpl implements AccountingVoucherService {
 
     private final AccountingVoucherMapper accountingVoucherMapper;
 
-    public AccountingVoucherServiceImpl(AccountingVoucherRepository accountingVoucherRepository, AccountingVoucherMapper accountingVoucherMapper) {
+    private final SelectedCompany selectedCompany;
+
+    public AccountingVoucherServiceImpl(AccountingVoucherRepository accountingVoucherRepository, AccountingVoucherMapper accountingVoucherMapper, SelectedCompany selectedCompany) {
         this.accountingVoucherRepository = accountingVoucherRepository;
         this.accountingVoucherMapper = accountingVoucherMapper;
+        this.selectedCompany = selectedCompany;
     }
 
     /**
@@ -50,6 +53,7 @@ public class AccountingVoucherServiceImpl implements AccountingVoucherService {
         else if(Objects.equals(accountingVoucherDTO.getAccountingVoucherType(), "Buy"))
             accountingVoucherDTO.setVoucherTypeLedger(VoucherTypeLedger.BuyLedger.toString());
         AccountingVoucher accountingVoucher = accountingVoucherMapper.toEntity(accountingVoucherDTO);
+        accountingVoucher.setCompany(selectedCompany.getSelectedCompany());
         accountingVoucher = accountingVoucherRepository.save(accountingVoucher);
         return accountingVoucherMapper.toDto(accountingVoucher);
     }

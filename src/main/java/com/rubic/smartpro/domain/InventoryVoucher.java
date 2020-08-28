@@ -42,6 +42,9 @@ public class InventoryVoucher implements Serializable {
     @Column(name="unique_key")
     private String uniqueKey;
 
+    @ManyToOne
+    private Company company;
+
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -124,6 +127,14 @@ public class InventoryVoucher implements Serializable {
 
     public void setDesQuantityTotal(Long desQuantityTotal) {
         this.desQuantityTotal = desQuantityTotal;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
